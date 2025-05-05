@@ -7,10 +7,14 @@ import TestimonialCard from "@/components/testimonial-card"
 import FAQAccordion from "@/components/faq-accordion"
 import CountdownTimer from "@/components/countdown-timer"
 import CountUpStat from "@/components/count-up-stat"
+import QualificationForm from "@/components/qualification-form"
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
+      {/* Formulário de qualificação (aparece apenas na primeira visita) */}
+      <QualificationForm />
+
       {/* Hero Section */}
       <section className="relative w-full bg-gradient-to-r from-black to-zinc-900 text-white">
         <div className="container mx-auto px-4 py-16 md:py-24">
