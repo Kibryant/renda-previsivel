@@ -265,7 +265,7 @@ export default function Home() {
                   <div className="text-center">
                     <p className="text-gray-400 line-through text-xl">De R$197,00</p>
                     <p className="text-3xl md:text-4xl font-bold text-amber-400">Por apenas R$29,99</p>
-                    <p className="text-sm">ou 12x de R$97,00</p>
+                    <p className="text-sm">ou 12x de R$2,99</p>
                   </div>
                 </div>
 
