@@ -263,8 +263,8 @@ export default function Home() {
 
                 <div className="flex justify-center space-x-4">
                   <div className="text-center">
-                    <p className="text-gray-400 line-through text-xl">De R$2.997,00</p>
-                    <p className="text-3xl md:text-4xl font-bold text-amber-400">Por apenas R$997,00</p>
+                    <p className="text-gray-400 line-through text-xl">De R$197,00</p>
+                    <p className="text-3xl md:text-4xl font-bold text-amber-400">Por apenas R$29,99</p>
                     <p className="text-sm">ou 12x de R$97,00</p>
                   </div>
                 </div>
@@ -272,6 +272,36 @@ export default function Home() {
                 <div className="pt-4">
                   <p className="text-lg">Esta oferta expira em:</p>
                   <CountdownTimer hours={23} minutes={59} seconds={59} />
+                </div>
+
+                <div className="mt-6 mb-4">
+                  <div className="bg-amber-500/10 border-2 border-amber-500 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <div className="pt-1">
+                        <input
+                          type="checkbox"
+                          id="orderBump"
+                          className="w-5 h-5 accent-green-600 cursor-pointer"
+                          defaultChecked={true}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="orderBump" className="flex flex-col cursor-pointer">
+                          <span className="font-bold text-amber-400 text-lg">
+                            SUPER OFERTA: Adicione por apenas R$7
+                          </span>
+                          <span className="text-white text-base mt-1">
+                            Guia Completo: "Tráfego Pago para Produtos Digitais" - Aprenda como criar campanhas de
+                            anúncios altamente lucrativas para vender seu produto digital
+                          </span>
+                          <div className="flex items-center mt-2 text-sm text-gray-300">
+                            <span className="line-through mr-2">De R$97</span>
+                            <span className="text-green-500 font-bold">Por apenas R$7</span>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <Button size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-6">
