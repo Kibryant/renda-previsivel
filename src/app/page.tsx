@@ -1,103 +1,330 @@
-import Image from "next/image";
+import Image from "next/image"
+import Link from "next/link"
+import { Check, CheckCircle, Clock, DollarSign, Lightbulb, Users, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import BenefitCard from "@/components/benefit-card"
+import TestimonialCard from "@/components/testimonial-card"
+import FAQAccordion from "@/components/faq-accordion"
+import CountdownTimer from "@/components/countdown-timer"
+import CountUpStat from "@/components/count-up-stat"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="flex min-h-screen flex-col items-center">
+      {/* Hero Section */}
+      <section className="relative w-full bg-gradient-to-r from-black to-zinc-900 text-white">
+        <div className="container mx-auto px-4 py-16 md:py-24">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 items-center">
+            <div className="space-y-6 md:space-y-8">
+              <div className="flex items-center space-x-2">
+                <Image src="/logo.png" alt="Renda Previsível" width={50} height={50} className="h-12 w-auto" />
+              </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
+                Descubra como criar seu produto digital e faturar
+                <span className="text-amber-400"> 50 mil reais</span> por mês pela internet.
+              </h1>
+
+              <p className="text-lg md:text-xl text-gray-300">
+                Aplique o Método Renda Previsível para escalar seu faturamento e construir sua liberdade financeira,
+                geográfica e de tempo.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-6">
+                  QUERO VENDER ONLINE!
+                </Button>
+                <div className="flex items-center text-amber-400">
+                  <Clock className="mr-2 h-5 w-5" />
+                  <span>Oferta por tempo limitado</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-zinc-800/80 backdrop-blur-sm rounded-xl border border-amber-400/20 p-6 shadow-2xl">
+                <div className="space-y-8">
+                  {/* Estatísticas animadas */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 bg-zinc-700/50 rounded-lg">
+                      <CountUpStat value={200} suffix="+" />
+                      <p className="text-amber-400 font-medium">Alunos</p>
+                    </div>
+                    <div className="text-center p-4 bg-zinc-700/50 rounded-lg">
+                      <CountUpStat value={50} suffix="K+" />
+                      <p className="text-amber-400 font-medium">Faturamento</p>
+                    </div>
+                    <div className="text-center p-4 bg-zinc-700/50 rounded-lg">
+                      <CountUpStat value={7} suffix=" dias" />
+                      <p className="text-amber-400 font-medium">Garantia</p>
+                    </div>
+                    <div className="text-center p-4 bg-zinc-700/50 rounded-lg">
+                      <CountUpStat value={24} suffix="/7" />
+                      <p className="text-amber-400 font-medium">Suporte</p>
+                    </div>
+                  </div>
+
+                  {/* Contador regressivo */}
+                  <div className="text-center">
+                    <p className="text-sm mb-1">Oferta especial expira em:</p>
+                    <div className="flex justify-center gap-2">
+                      <div className="bg-amber-500 text-black px-3 py-2 rounded-md font-mono font-bold">23</div>
+                      <div className="text-amber-500 flex items-center">:</div>
+                      <div className="bg-amber-500 text-black px-3 py-2 rounded-md font-mono font-bold">59</div>
+                      <div className="text-amber-500 flex items-center">:</div>
+                      <div className="bg-amber-500 text-black px-3 py-2 rounded-md font-mono font-bold">59</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Elementos decorativos */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-amber-400/20 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-green-400/20 rounded-full blur-xl" />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="w-full bg-zinc-100 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Para quem é o <span className="text-amber-600">Método Renda Previsível?</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <BenefitCard
+              icon={<Users className="h-10 w-10 text-amber-600" />}
+              title="+ de 200 mentorados"
+              description="De diversos segmentos profissionais que transformaram conhecimento em renda"
+            />
+
+            <BenefitCard
+              icon={<Lightbulb className="h-10 w-10 text-amber-600" />}
+              title="Para quem tem ou quer criar"
+              description="Um produto digital e não sabe por onde começar"
+            />
+
+            <BenefitCard
+              icon={<DollarSign className="h-10 w-10 text-amber-600" />}
+              title="Para cursos, mentorias e serviços"
+              description="Consultoria, serviços e produtos digitais de qualquer nicho"
+            />
+
+            <BenefitCard
+              icon={<Clock className="h-10 w-10 text-amber-600" />}
+              title="Sem precisar vender sua hora"
+              description="Trabalhe de acordo com sua agenda e tenha liberdade de tempo"
+            />
+
+            <BenefitCard
+              icon={<CheckCircle className="h-10 w-10 text-amber-600" />}
+              title="Com direcionamento individual"
+              description="Dos nossos especialistas para acelerar seus resultados"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="w-full bg-zinc-900 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <h2 className="text-3xl md:text-4xl font-bold">Você está cansado de...</h2>
+
+            <ul className="space-y-4 text-left text-lg">
+              <li className="flex items-start">
+                <X className="size-8 text-red-500 mr-2" />
+                <span>
+                  Trabalhar muitas horas por dia e ainda assim não conseguir a liberdade financeira que deseja?
+                </span>
+              </li>
+              <li className="flex items-start">
+                <X className="size-8 text-red-500 mr-2" />
+                <span>
+                  Ver outras pessoas vendendo produtos digitais e faturando alto enquanto você não sabe por onde
+                  começar?
+                </span>
+              </li>
+              <li className="flex items-start">
+                <X className="size-8 text-red-500 mr-2" />
+                <span>Investir em cursos que prometem resultados mas não entregam um método prático e comprovado?</span>
+              </li>
+              <li className="flex items-start">
+                <X className="size-8 text-red-500 mr-2" />
+                <span>Não ter tempo para sua família e para fazer o que realmente gosta?</span>
+              </li>
+            </ul>
+
+            <div className="pt-6">
+              <h3 className="text-2xl font-bold text-amber-400">Existe uma solução comprovada para isso!</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="w-full bg-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Apresentando o <span className="text-amber-600">Método Renda Previsível</span>
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/mockup.webp?height=400&width=500"
+                  alt="Método Renda Previsível"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold">Um sistema completo para:</h3>
+
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                   <Check className="size-8 text-green-500 mr-2" />
+                    <span>Criar seu produto digital mesmo que você não tenha experiência técnica</span>
+                  </li>
+                  <li className="flex items-start">
+                   <Check className="size-8 text-green-500 mr-2" />
+                    <span>Estruturar uma estratégia de vendas que funciona em qualquer nicho</span>
+                  </li>
+                  <li className="flex items-start">
+                   <Check className="size-8 text-green-500 mr-2" />
+                    <span>Escalar seu faturamento de forma previsível e consistente</span>
+                  </li>
+                  <li className="flex items-start">
+                   <Check className="size-8 text-green-500 mr-2" />
+                    <span>Automatizar seus processos para ter mais liberdade de tempo</span>
+                  </li>
+                  <li className="flex items-start">
+                   <Check className="size-8 text-green-500 mr-2" />
+                    <span>Construir uma audiência engajada que compra seus produtos</span>
+                  </li>
+                </ul>
+
+                <Button size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-6">
+                  QUERO CONHECER O MÉTODO
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="w-full bg-zinc-100 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">O que nossos alunos estão dizendo</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <TestimonialCard
+              name="Carlos Silva"
+              profession="Coach de Produtividade"
+              testimonial="Em apenas 3 meses aplicando o método, consegui lançar meu primeiro produto digital e faturei R$32.450,00. O suporte da equipe foi fundamental para o meu sucesso."
+              imageUrl="/placeholder.svg?height=100&width=100"
+              rating={5}
+            />
+
+            <TestimonialCard
+              name="Mariana Costa"
+              profession="Nutricionista"
+              testimonial="Eu não entendia nada de marketing digital, mas o método é tão claro e prático que consegui criar meu curso online e já estou com mais de 200 alunos. Mudou minha vida!"
+              imageUrl="/placeholder.svg?height=100&width=100"
+              rating={5}
+            />
+
+            <TestimonialCard
+              name="Roberto Almeida"
+              profession="Consultor Financeiro"
+              testimonial="Já tinha tentado vender meus serviços online sem sucesso. Com o Método Renda Previsível, entendi onde estava errando e agora tenho uma renda mensal de mais de R$40 mil."
+              imageUrl="/placeholder.svg?height=100&width=100"
+              rating={5}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Offer Section */}
+      <section className="w-full bg-zinc-900 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-3xl md:text-4xl font-bold">Oferta Especial por Tempo Limitado</h2>
+
+            <div className="bg-zinc-800 rounded-lg p-8 border-2 border-amber-400">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold">Método Renda Previsível + Bônus Exclusivos</h3>
+
+                <div className="flex justify-center space-x-4">
+                  <div className="text-center">
+                    <p className="text-gray-400 line-through text-xl">De R$2.997,00</p>
+                    <p className="text-3xl md:text-4xl font-bold text-amber-400">Por apenas R$997,00</p>
+                    <p className="text-sm">ou 12x de R$97,00</p>
+                  </div>
+                </div>
+
+                <div className="pt-4">
+                  <p className="text-lg">Esta oferta expira em:</p>
+                  <CountdownTimer hours={23} minutes={59} seconds={59} />
+                </div>
+
+                <Button size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-6">
+                  QUERO GARANTIR MINHA VAGA AGORA
+                </Button>
+
+                <p className="text-sm text-gray-400">
+                  Pagamento 100% seguro. Garantia de 7 dias ou seu dinheiro de volta.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="w-full bg-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+
+            <FAQAccordion />
+
+            <div className="mt-12 text-center">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-6">
+                QUERO COMEÇAR AGORA
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full bg-zinc-900 text-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-4">
+            <Image src="/logo.png" alt="Renda Previsível" width={40} height={40} className="h-10 w-auto mx-auto" />
+
+            <p className="text-sm text-gray-400">
+              © {new Date().getFullYear()} Método Renda Previsível. Todos os direitos reservados.
+            </p>
+
+            <div className="flex justify-center space-x-4">
+              <Link href="/termos" className="text-sm text-gray-400 hover:text-white">
+                Termos de Uso
+              </Link>
+              <Link href="/privacidade" className="text-sm text-gray-400 hover:text-white">
+                Política de Privacidade
+              </Link>
+            </div>
+          </div>
+        </div>
       </footer>
-    </div>
-  );
+    </main>
+  )
 }
