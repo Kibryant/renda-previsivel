@@ -69,16 +69,10 @@ export default function Home() {
                   </div>
 
                   {/* Contador regressivo */}
-                  <div className="text-center">
-                    <p className="text-sm mb-1">Oferta especial expira em:</p>
-                    <div className="flex justify-center gap-2">
-                      <div className="bg-amber-500 text-black px-3 py-2 rounded-md font-mono font-bold">23</div>
-                      <div className="text-amber-500 flex items-center">:</div>
-                      <div className="bg-amber-500 text-black px-3 py-2 rounded-md font-mono font-bold">59</div>
-                      <div className="text-amber-500 flex items-center">:</div>
-                      <div className="bg-amber-500 text-black px-3 py-2 rounded-md font-mono font-bold">59</div>
-                    </div>
-                  </div>
+                <div className="pt-4">
+                  <p className="text-lg text-center">Esta oferta expira em:</p>
+                  <CountdownTimer hours={23} minutes={59} seconds={59} />
+                </div>
                 </div>
               </div>
 
