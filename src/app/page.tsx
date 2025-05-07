@@ -35,9 +35,9 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-6">
+                <a className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-6 h-10 rounded-md has-[>svg]:px-4 inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive" href="#offer">
                   QUERO VENDER ONLINE!
-                </Button>
+                </a>
                 <div className="flex items-center text-amber-400">
                   <Clock className="mr-2 h-5 w-5" />
                   <span>Oferta por tempo limitado</span>
@@ -212,10 +212,9 @@ export default function Home() {
                     <span>Construir uma audiência engajada que compra seus produtos</span>
                   </li>
                 </ul>
-
-                <Button size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-6">
+                <a className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-6 h-10 rounded-md has-[>svg]:px-4 inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive" href="#offer">
                   QUERO CONHECER O MÉTODO
-                </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -256,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* Offer Section */}
-      <section className="w-full bg-zinc-900 text-white py-16">
+      <section className="w-full bg-zinc-900 text-white py-16" id="offer">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold">Oferta Especial por Tempo Limitado</h2>
@@ -309,7 +308,7 @@ export default function Home() {
                 </div>
 
                 <Button size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-6">
-                  QUERO GARANTIR MINHA VAGA AGORA
+                  QUERO GARANTIR MINHA VAGA
                 </Button>
 
                 <p className="text-sm text-gray-400">
