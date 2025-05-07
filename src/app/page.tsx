@@ -307,9 +307,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-6">
+                <a href="https://checkout.viperpay.com.br/vBkcNGIo" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-6 h-10 rounded-md has-[>svg]:px-4 inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive" target="_blank" rel="noreferrer">
                   QUERO GARANTIR MINHA VAGA
-                </Button>
+                </a>
 
                 <p className="text-sm text-gray-400">
                   Pagamento 100% seguro. Garantia de 7 dias ou seu dinheiro de volta.
@@ -329,9 +329,9 @@ export default function Home() {
             <FAQAccordion />
 
             <div className="mt-12 text-center">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-6">
+              <a href="https://checkout.viperpay.com.br/vBkcNGIo"  className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-6 h-10 rounded-md has-[>svg]:px-4 inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive" target="_blank" rel="noreferrer">
                 QUERO COMEÇAR AGORA
-              </Button>
+              </a>
             </div>
           </div>
         </div>
