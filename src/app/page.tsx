@@ -291,7 +291,7 @@ export default function Home() {
                       <div>
                         <label htmlFor="orderBump" className="flex flex-col cursor-pointer">
                           <span className="font-bold text-amber-400 text-lg">
-                            SUPER OFERTA: Adicione por apenas R$7
+                            SUPER OFERTA: Adicione por apenas R$9,99
                           </span>
                           <span className="text-white text-base mt-1">
                             Guia Completo: "Tráfego Pago para Produtos Digitais" - Aprenda como criar campanhas de
