@@ -293,7 +293,7 @@ export default function Home() {
                           </span>
                           <div className="flex items-center mt-2 text-sm text-gray-300">
                             <span className="line-through mr-2">De R$97</span>
-                            <span className="text-green-500 font-bold">Por apenas R$7</span>
+                            <span className="text-green-500 font-bold">Por apenas R$9,99</span>
                           </div>
                         </label>
                       </div>
